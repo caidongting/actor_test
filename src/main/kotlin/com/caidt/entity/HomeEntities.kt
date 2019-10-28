@@ -3,6 +3,7 @@
 package com.caidt.entity
 
 import com.caidt.IEntity
+import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -18,12 +19,12 @@ interface PlayerEntity : IEntity {
 data class PlayerAccountEntity(
     @Id
     @Column(name = "player_id")
-    override var playerId: Long,
+    override val playerId: Long,
 
     @Column(name = "name")
     var name: String
 ) : PlayerEntity {
-    override fun primaryKey(): Any {
+    override fun primaryKey(): Serializable {
         return this.playerId
     }
 }

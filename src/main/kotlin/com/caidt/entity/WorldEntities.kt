@@ -4,5 +4,5 @@ import com.caidt.IEntity
 
 
 interface WorldEntity : IEntity {
-    var worldId: Long
+    val worldId: Long
 }

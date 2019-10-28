@@ -6,6 +6,10 @@ object Tick
 /** 通用返回消息ok */
 object OkResponse
 
-data class UP(val playerId: PlayerId)
+open class PlayerMessage {
+    open var playerId: PlayerId = 0
+}
 
-data class Disconnect(val playerId: PlayerId)
+data class UP(override var playerId: PlayerId) : PlayerMessage()
+
+data class Disconnect(override var playerId: PlayerId) : PlayerMessage()

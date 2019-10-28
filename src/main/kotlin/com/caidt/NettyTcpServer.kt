@@ -10,11 +10,11 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder
 import io.netty.util.AttributeKey
 
 
-class NettyTcpServer {
+class NettyTcpServer(private val port: Int) {
 
     private lateinit var bootstrap: ServerBootstrap
 
-    fun init(port: Int) {
+    fun init() {
         bootstrap = ServerBootstrap()
             .group(NioEventLoopGroup(), NioEventLoopGroup())
             .channel(NioServerSocketChannel::class.java)
@@ -31,10 +31,6 @@ class NettyTcpServer {
             })
 
         bootstrap.bind(port).sync()
-    }
-
-    fun close() {
-//        bootstrap.close()
     }
 }
 
