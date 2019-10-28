@@ -1,0 +1,9 @@
+package com.caidt.proto;
+
+message CsMessage {
+
+    oneof cmd {
+
+    }
+
+}

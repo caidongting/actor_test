@@ -1,0 +1,10 @@
+package com.caidt.proto;
+
+
+message ScMessage {
+
+    oneof cmd {
+
+    }
+
+}
